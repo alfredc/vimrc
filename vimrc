@@ -4,40 +4,67 @@ set nocompatible	        " Use Vim defaults (much better!)
 set bs=indent,eol,start		" allow backspacing over everything in insert mode
 set ai			              " always set autoindenting on
 "set backup               " keep a backup file
-set viminfo='20,\"50	    " read/write a .viminfo file, don't store more
+set viminfo='20,\"100	    " read/write a .viminfo file, don't store more
 			                    " than 50 lines of registers
-set history=50		        " keep 50 lines of command line history
+set history=100		        " keep 50 lines of command line history
 set ruler		              " show the cursor position all the time
+set backup                " keep a backup file
 
-" turn off auto adding comments on next line
-" so you can cut and paste reliably
+" back up to central location
+set backupdir=~/.vim/tmp,~/.tmp,/var/tmp,/tmp
+set directory=~/.vim/tmp,~/.tmp,/var/tmp,/tmp
+
+" turn off auto adding comments to cut and paste reliably
 " http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
 set formatoptions-=c
 
-" Get that filetype stuff happening
+" filetype stuff
 filetype on
 filetype plugin on
-"filetype indent on
+filetype indent on
 
 set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set number         " show line numbers
+"set number         " show line numbers
+
+syntax on     " syntax highlighting
+set hlsearch  " search highlighting
+
+set incsearch    " search dynamically while typing
+set ignorecase   " case-insensitive search 
+set smartcase    " case-sensitive if there is a capital letter in query
+                
+set hidden       " allow hiding buffers by default
+set lazyredraw   " don't update the display while executing macros
+set showmode     " show current mode
+                
+set wildmenu     " pressing tab shows list of options
+set title        " show filename in window title
+
+set scrolloff=3  " start scrolling 3 lines before border
+
+"set shortmess=atI  " shorten command-line prompts
+"set visualbell     " make window flash briefly in place of bell sound
 
 
-" Turn on that syntax highlighting
-syntax on
-set hlsearch
+"""" Map Keys
 
-" Why is this not a default
-set hidden
+let mapleader = ","   " change default leader key
 
-" Don't update the display while executing macros
-set lazyredraw
+" <leader>n: temporarily turn off search highlighting
+nmap <silent> <leader>n :silent :nohlsearch<CR>
 
-" At least let yourself know what mode you're in
-set showmode
+" <leader>s: make whitespace visible
+set listchars=tab:>-,trail:·,eol:$
+nmap <silent> <leader>s :set nolist!<CR>
+
+
+"""" Extensions
+
+" extended % matching (can match things like if/elsif/else/end)
+runtime macros/matchit.vim
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
