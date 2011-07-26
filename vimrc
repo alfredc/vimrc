@@ -41,11 +41,20 @@ set showmode
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
-  " In text files, always limit the width of text to 78 characters
-  autocmd BufRead *.txt set tw=78
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+  
   " When editing a file, always jump to the last cursor position
   "autocmd BufReadPost *
   "\ if line("'\"") > 0 && line ("'\"") <= line("$") |
   "\   exe "normal! g'\"" |
   "\ endif
+endif
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+                  \ | wincmd p | diffthis
 endif
