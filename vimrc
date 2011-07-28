@@ -73,8 +73,11 @@ nmap <silent> <leader>nt :NERDTreeToggle<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-Up> :tabnew<CR>
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+
+" Paste toggle
+nnoremap <leader>p :set invpaste paste?<CR>
+set pastetoggle=<leader>p
+set showmode
 
 """" Extensions
 
