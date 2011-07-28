@@ -75,8 +75,8 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-Up> :tabnew<CR>
 
 " Paste toggle
-nnoremap <leader>p :set invpaste paste?<CR>
-set pastetoggle=<leader>p
+nnoremap <F5> :set invpaste paste?<CR>
+set pastetoggle=<F5>
 set showmode
 
 """" Extensions
