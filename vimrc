@@ -1,14 +1,19 @@
 " .vimrc
+scriptencoding utf-8
+
+" For pathogen.vim: auto load all plugins in bundle
+source bundle/pathogen/autoload/pathogen.vim
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 set nocompatible	        " Use Vim defaults (much better!)
 set bs=indent,eol,start		" allow backspacing over everything in insert mode
 set ai			              " always set autoindenting on
-"set backup               " keep a backup file
+set backup                " keep a backup file
 set viminfo='20,\"100	    " read/write a .viminfo file, don't store more
 			                    " than 50 lines of registers
 set history=100		        " keep 50 lines of command line history
 set ruler		              " show the cursor position all the time
-set backup                " keep a backup file
 
 " back up to central location
 set backupdir=~/.vim/tmp,~/.tmp,/var/tmp,/tmp
