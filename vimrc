@@ -46,6 +46,7 @@ set lazyredraw   " don't update the display while executing macros
 set showmode     " show current mode
                 
 set wildmenu     " pressing tab shows list of options
+set wildmode=list:longest " show list and complete to longest common string
 set title        " show filename in window title
 
 set scrolloff=3  " start scrolling 3 lines before border
@@ -59,12 +60,21 @@ set scrolloff=3  " start scrolling 3 lines before border
 let mapleader = ","   " change default leader key
 
 " <leader>n: temporarily turn off search highlighting
-nmap <silent> <leader>n :silent :nohlsearch<CR>
+nmap <silent> <leader>h :silent :nohlsearch<CR>
 
 " <leader>s: make whitespace visible
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 
+" <leader>nt: open NERDTree
+nmap <silent> <leader>nt :NERDTreeToggle<CR>
+
+" Tab shortcuts
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-Up> :tabnew<CR>
+nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
 """" Extensions
 
