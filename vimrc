@@ -3,8 +3,8 @@ scriptencoding utf-8
 
 " For pathogen.vim: auto load all plugins in bundle
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
+"call pathogen#helptags()
 
 set nocompatible	        " Use Vim defaults (much better!)
 set bs=indent,eol,start		" allow backspacing over everything in insert mode
