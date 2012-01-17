@@ -67,12 +67,16 @@ set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 
 " <leader>nt: open NERDTree
-nmap <silent> <leader>nt :NERDTreeToggle<CR>
+nmap <silent> <leader>d :NERDTreeToggle<CR>
 
 " Tab shortcuts
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <C-Up> :tabnew<CR>
+"nnoremap <C-Left> :tabprevious<CR>
+"nnoremap <C-Right> :tabnext<CR>
+"nnoremap <C-Up> :tabnew<CR>
+nmap <C-h> :tabprevious<CR>
+nmap <C-l> :tabnext<CR>
+imap <C-h> <ESC>:tabprevious<CR>i
+imap <C-l> <ESC>:tabnext<CR>i
 
 " Paste toggle
 nnoremap <F5> :set invpaste paste?<CR>
