@@ -66,7 +66,7 @@ nmap <silent> <leader>h :silent :nohlsearch<CR>
 set listchars=tab:>-,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 
-" <leader>nt: open NERDTree
+" <leader>d: open NERDTree
 nmap <silent> <leader>d :NERDTreeToggle<CR>
 
 " Tab shortcuts
