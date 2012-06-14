@@ -22,3 +22,6 @@
 [submodule "bundle/handlebars"]
 	path = bundle/handlebars
 	url = git://github.com/nono/vim-handlebars.git
+[submodule "bundle/scss-syntax"]
+	path = bundle/scss-syntax
+	url = git://github.com/cakebaker/scss-syntax.vim.git
