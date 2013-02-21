@@ -54,6 +54,9 @@ set scrolloff=3  " start scrolling 3 lines before border
 "set shortmess=atI  " shorten command-line prompts
 "set visualbell     " make window flash briefly in place of bell sound
 
+" Mouse support!
+set mouse=a
+
 
 """" Map Keys
 
@@ -82,6 +85,16 @@ imap <C-l> <ESC>:tabnext<CR>i
 nnoremap <F5> :set invpaste paste?<CR>
 set pastetoggle=<F5>
 set showmode
+
+" Some helpers to edit mode (http://vimcasts.org/e/14)
+nmap <leader>ew :e <C-R>=expand('%:h').'/'<cr>
+nmap <leader>es :sp <C-R>=expand('%:h').'/'<cr>
+nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<cr>
+nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
+
+" Swap two words
+"nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+ 
 
 
 """" Colors
