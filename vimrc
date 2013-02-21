@@ -83,6 +83,16 @@ nnoremap <F5> :set invpaste paste?<CR>
 set pastetoggle=<F5>
 set showmode
 
+
+"""" Colors
+set background=dark
+"set background=light
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_contrast='high'
+colorscheme solarized
+
+
 """" Extensions
 
 " extended % matching (can match things like if/elsif/else/end)
