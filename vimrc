@@ -81,6 +81,12 @@ nmap <C-l> :tabnext<CR>
 imap <C-h> <ESC>:tabprevious<CR>i
 imap <C-l> <ESC>:tabnext<CR>i
 
+" Buffer shortcuts
+nmap <C-k> :bprevious<CR>
+nmap <C-j> :bnext<CR>
+imap <C-k> <ESC>:bprevious<CR>i
+imap <C-j> <ESC>:bnext<CR>i
+
 " Paste toggle
 nnoremap <F5> :set invpaste paste?<CR>
 set pastetoggle=<F5>
