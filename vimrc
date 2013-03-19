@@ -82,10 +82,11 @@ imap <C-h> <ESC>:tabprevious<CR>i
 imap <C-l> <ESC>:tabnext<CR>i
 
 " Buffer shortcuts
-nmap <C-k> :bprevious<CR>
-nmap <C-j> :bnext<CR>
-imap <C-k> <ESC>:bprevious<CR>i
-imap <C-j> <ESC>:bnext<CR>i
+"nmap <C-k> :bprevious<CR>
+"nmap <C-j> :bnext<CR>
+"imap <C-k> <ESC>:bprevious<CR>i
+"imap <C-j> <ESC>:bnext<CR>i
+nmap <C-j> :BufExplorerVerticalSplit<CR>j
 
 " Paste toggle
 nnoremap <F5> :set invpaste paste?<CR>
